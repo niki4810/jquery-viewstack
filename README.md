@@ -24,14 +24,14 @@ To convert a html container as shown below into a viewstack
 ```
 
 
-* Creating a view stack: 
+## Creating a view stack: 
 
 ```javascript
 //creating a view stack (defaults the view index to 0)
 $("#myViewStack").viewstack();
 ```
 
-* Setting the selected index property:
+## Setting the selected index property:
 
 ```javascript
 //passing the selectedIndex as a param
@@ -43,7 +43,7 @@ $("#myViewStack").viewstack({
 $("#myViewStack").viewstack("option", "selectedIndex", 1);
 ```
 
-* Listening for a creation complete event
+## Listening for a creation complete event
 
 ```javascript
 $("#myViewStack").viewstack({
@@ -53,7 +53,7 @@ $("#myViewStack").viewstack({
 })
 ```
 
-* Listening for selected index change event
+## Listening for selected index change event
 
 ```javascript
 $("#myViewStack").viewstack({
@@ -63,13 +63,13 @@ $("#myViewStack").viewstack({
 });
 ```
 
-* Get the total number of view stack children
+## Get the total number of view stack children
 
 ```javascript
 $(".myViewStack").viewstack("getChildrenCount");
 ```
 
-* Get the viewstack's selectedIndex
+## Get the viewstack's selectedIndex
 
 ```javascript
  $(".myViewStack").viewstack("getSelectedIndex");
