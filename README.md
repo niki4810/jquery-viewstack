@@ -66,15 +66,18 @@ $("#myViewStack").viewstack({
 ## Get the total number of view stack children
 
 ```javascript
-$(".myViewStack").viewstack("getChildrenCount");
+$("#myViewStack").viewstack("getChildrenCount");
 ```
 
 ## Get the viewstack's selectedIndex
 
 ```javascript
- $(".myViewStack").viewstack("getSelectedIndex");
+ $("#myViewStack").viewstack("getSelectedIndex");
 ```
 
+##Example
+
+view an example at : [example](https://github.com/niki4810/jquery-viewstack/tree/master/example)
 
 # License
 
