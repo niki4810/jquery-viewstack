@@ -18,6 +18,7 @@ To convert a html container as shown below into a viewstack
 
 
 * Creating a view stack: 
+
 ```javascript
 //creating a view stack (defaults the view index to 0)
 $("#myViewStack").viewstack();
