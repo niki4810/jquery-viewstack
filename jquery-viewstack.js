@@ -13,7 +13,7 @@ $.widget("nk.viewstack", {
 	_viewStackChildren : null,
 	_create : function() {
 		this._viewStackChildren = this.element.find("> div");
-		if(!this._viewStackChildren){
+		if (!this._viewStackChildren) {
 			throw Error("Expected viewstack children to be defined");
 		}
 		this._createView();
@@ -58,6 +58,6 @@ $.widget("nk.viewstack", {
 		return this.options.selectedIndex;
 	},
 	getChildrenCount : function() {
-       return this._viewStackChildren.length;
+		return this._viewStackChildren.length;
 	}
 });
