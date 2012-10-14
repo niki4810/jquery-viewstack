@@ -1,30 +1,57 @@
+/*!
+ * jquery viewstack (0.22)
+ * Copyright 2012, Nikhilesh Katakam
+ * Distributed under MIT license.
+ * https://github.com/niki4810/jquery-viewstack
+ */
+
 $.widget("nk.viewstack", {
-	version:"0.1",
+	version : "0.1",
 	options : {
 		selectedIndex : 0
 	},
+	_viewStackChildren : null,
 	_create : function() {
-		this.element.addClass("viewstack ui-widget");
-		this._update();
+		this._viewStackChildren = this.element.find("> div");
+		this._createView();
 	},
 	_setOption : function(key, value) {
-		this.options[key] = value;
-		this._update();
+		if (key === "selectedIndex") {
+			this.options[key] = value;
+			this._updateDisplayList();
+		}
+
 	},
-	_update : function() {
-		
-		var viewStackChildren = this.element.find("> div");
-		
-		for(var i=0; i<viewStackChildren.length; i++){
-			if(this.options.selectedIndex === i){
-			$(viewStackChildren[i]).addClass(" ui-widget-content ui-corner-all")	
-			 $(viewStackChildren[i]).show();	
-			}else{
+	_createView : function() {
+		this._refreshView();
+		//trigger a creation complete event
+		this._trigger("creationComplete", null, {
+			selectedIndex : this.options.selectedIndex
+		});
+	},
+	_updateDisplayList : function() {
+		this._refreshView();
+		//trigger selected index changed event
+		this._trigger("selectedIndexChanged", null, {
+			selectedIndex : this.options.selectedIndex
+		});
+	},
+	_refreshView : function() {
+		var viewStackChildren = this._viewStackChildren;
+		for (var i = 0; i < viewStackChildren.length; i++) {
+			if (this.options.selectedIndex === i) {
+				$(viewStackChildren[i]).show();
+			} else {
 				$(viewStackChildren[i]).hide();
 			}
 		}
 	},
-	getSelectedIndex: function(){
+	destroy : function() {
+		// call the base destroy function
+		$.Widget.prototype.destroy.call(this);
+	},
+	/*public methods*/
+	getSelectedIndex : function() {
 		return this.options.selectedIndex;
 	}
 });
