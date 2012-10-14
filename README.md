@@ -3,6 +3,13 @@
 
 A minimalistic implementation of viewstack in javascript. Viewstack is a collection of containers, where only one container is visible at a time.
 
+#Dependencies
+
+jquery-viewstack depends on
+
+* jQuery &
+* jQuery-ui
+
 # How to use
 
 
