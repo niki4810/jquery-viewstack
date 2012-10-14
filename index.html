@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Jquery-viewstack : A minimalistic implementation of viewstack in javascript. jquery-viewstack is a collection of containers, where only one container is visible at a time.is visible" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Jquery-viewstack</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/niki4810/jquery-viewstack">View on GitHub</a>
+
+          <h1 id="project_title">Jquery-viewstack</h1>
+          <h2 id="project_tagline">A minimalistic implementation of viewstack in javascript. jquery-viewstack is a collection of containers, where only one container is visible at a time.is visible</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/niki4810/jquery-viewstack/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/niki4810/jquery-viewstack/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>viewstack</h1>
+
+<p>A minimalistic implementation of viewstack in javascript. Viewstack is a collection of containers, where only one container is visible at a time.</p>
+
+<h1>Dependencies</h1>
+
+<p>jquery-viewstack depends on</p>
+
+<ul>
+<li>jQuery &amp;</li>
+<li>jQuery-ui</li>
+</ul><h1>How to use</h1>
+
+<p>To convert a html container as shown below into a viewstack</p>
+
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"myViewStack"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div&gt;</span> container 1 <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> container 2 <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> container 3 <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+<h2>Creating a view stack:</h2>
+
+<div class="highlight"><pre><span class="c1">//creating a view stack (defaults the view index to 0)</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#myViewStack"</span><span class="p">).</span><span class="nx">viewstack</span><span class="p">();</span>
+</pre></div>
+
+<h2>Setting the selected index property:</h2>
+
+<div class="highlight"><pre><span class="c1">//passing the selectedIndex as a param</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#myViewStack"</span><span class="p">).</span><span class="nx">viewstack</span><span class="p">({</span>
+    <span class="nx">selectedIndex</span> <span class="o">:</span> <span class="mi">1</span>
+<span class="p">});</span>
+
+<span class="c1">//or use the options param</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#myViewStack"</span><span class="p">).</span><span class="nx">viewstack</span><span class="p">(</span><span class="s2">"option"</span><span class="p">,</span> <span class="s2">"selectedIndex"</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
+
+<h2>Listening for a creation complete event</h2>
+
+<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">"#myViewStack"</span><span class="p">).</span><span class="nx">viewstack</span><span class="p">({</span>
+    <span class="nx">creationComplete</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">selectedIndex</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</pre></div>
+
+<h2>Listening for selected index change event</h2>
+
+<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">"#myViewStack"</span><span class="p">).</span><span class="nx">viewstack</span><span class="p">({</span>
+    <span class="nx">selectedIndexChange</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">e</span><span class="p">,</span> <span class="nx">data</span> <span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">selectedIndex</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+<h2>Get the total number of view stack children</h2>
+
+<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">".myViewStack"</span><span class="p">).</span><span class="nx">viewstack</span><span class="p">(</span><span class="s2">"getChildrenCount"</span><span class="p">);</span>
+</pre></div>
+
+<h2>Get the viewstack's selectedIndex</h2>
+
+<div class="highlight"><pre> <span class="nx">$</span><span class="p">(</span><span class="s2">".myViewStack"</span><span class="p">).</span><span class="nx">viewstack</span><span class="p">(</span><span class="s2">"getSelectedIndex"</span><span class="p">);</span>
+</pre></div>
+
+<h2>Example</h2>
+
+<p>view an example at : <a href="https://github.com/niki4810/jquery-viewstack/tree/master/example">example</a></p>
+
+<h1>License</h1>
+
+<p>The MIT License (MIT)</p>
+
+<p>Copyright (c) 2012 Nikhilesh Katakam</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Jquery-viewstack maintained by <a href="https://github.com/niki4810">niki4810</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
