@@ -19,34 +19,26 @@ To convert a html container as shown below into a viewstack
 
 1. Creating a view stack: 
 ```
-
 //creating a view stack (defaults the view index to 0)
 $("#myViewStack").viewstack();
-
 ```
 
 2. Setting the selected index property:
 
 ```
-
 //passing the selectedIndex as a param
 $("#myViewStack").viewstack({
 	selectedIndex : 1
 });
 
-```
-
-or
-```
+//or
 
 $("#myViewStack").viewstack("option", "selectedIndex", 1);
-
 ```
 
 3. Listening for a creation complete event
 
 ```
-
 $("#myViewStack").viewstack({
 	creationComplete : function(e, data) {
 		console.log(data.selectedIndex);
@@ -57,29 +49,23 @@ $("#myViewStack").viewstack({
 4. Listening for selected index change event
 
 ```
-
 $("#myViewStack").viewstack({
 	selectedIndexChange : function( e, data ){
 		console.log(data.selectedIndex);
 	}
 });
-
 ```
 
 5. Get the total number of view stack children
 
 ```
-
 $(".myViewStack").viewstack("getChildrenCount");
-
 ```
 
 6. Get the viewstack's selectedIndex
 
 ```
-
  $(".myViewStack").viewstack("getSelectedIndex");
-
 ```
 
 
