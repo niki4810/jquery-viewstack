@@ -15,7 +15,7 @@ jquery-viewstack depends on
 
 To convert a html container as shown below into a viewstack
 
-```
+```html
 <div id="myViewStack">
 	<div> container 1 </div>
 	<div> container 2 </div>
