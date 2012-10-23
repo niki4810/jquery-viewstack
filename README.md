@@ -77,7 +77,7 @@ $("#myViewStack").viewstack("getChildrenCount");
 
 ##Example
 
-view an example at : [example](https://github.com/niki4810/jquery-viewstack/tree/master/example)
+view an example at : [example](http://niki4810.github.com/jquery-viewstack/example/index.html)
 
 # License
 
